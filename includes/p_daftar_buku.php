@@ -10,7 +10,7 @@
 	$db=new MySQL();
 	$db->connect();
 	$db->execute("SELECT b.kodeBuku, b.judul, p1.nama, p2.nama, b.tahun, b.edisi, b.issn_isbn, 
-		b.seri, b.abstraksi, k.namaKategori, b.tglInput, b.tglUpdate, pt.nama, p1.kodePenerbit, p2.kodePengarang
+		b.seri, b.abstraksi, k.namaKategori, b.tglInput, b.tglUpdate, b.image,pt.nama, p1.kodePenerbit, p2.kodePengarang
 		FROM tb_buku b, tb_penerbit p1, tb_pengarang p2, tb_kategori k, tb_petugas pt
 		WHERE b.kodePenerbit = p1.kodePenerbit
 		AND b.kodePengarang = p2.kodePengarang
@@ -112,7 +112,7 @@
   <div class="modal-body">
       <div class="row-fluid">
 		<div class="span4">
-			<p><img src="img/no_image.jpg" class="img-polaroid img"></p>
+			<p><img src="<?= $data[$i][12] ?>" class="img-polaroid img"></p>
 		</div>
 		<div class="span7 title">
 			<table class="table table-condensed">
@@ -211,7 +211,7 @@
 
 <!-- EDIT -->
 <?php for($i = 0; $i < count($data); $i++) { ?>
-<form action="?page=process" method="post">
+<form action="?page=process" method="post" enctype="multipart/form-data">
 <div class="modal hide fade" id="modalEdit<?=$i?>" tabindex="-1" role="dialog" aria-labelledby="modalEdit<?=$i?>Label" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -219,15 +219,15 @@
   </div>
   <div class="modal-body">
       <div class="row-fluid">
-		<input type="hidden" name="kodeBuku" id="kodeBuku" value="<?=$data[$i][0]?>">
-		<input type="hidden" name="kodePetugas" id="kodePetugas" value="<?=$idUser?>">
+		<input type="hidden" name="kodeBuku" id="kodeBuku" value="<?=$data[$i][0]?>" required>
+		<input type="hidden" name="kodePetugas" id="kodePetugas" value="<?=$idUser?>" required>
 		<input type="hidden" name="tb" id="tb">
 		<div>
 			<label><p class="title">Judul Buku</p>
 			  <input name="judul" type="text" class="span12" value="<?=$data[$i][1]?>">
 			</label>
 			<label><p class="title">Penerbit</p>
-				<select name="kodePenerbit" class="span12">
+				<select name="kodePenerbit" class="span12" required>
 				  <?php
 					$db=new MySQL();
 					$db->connect();
@@ -244,7 +244,7 @@
 				</select>
 			</label>
 			<label><p class="title">Pengarang</p>
-				<select name="kodePengarang" class="span12">
+				<select name="kodePengarang" class="span12" required>
 				  <?php
 					$db=new MySQL();
 					$db->connect();
@@ -261,22 +261,22 @@
 				</select>
 			</label>
 			<label><p class="title">Tahun Terbit</p>
-			  <input name="tahun" type="text" class="span12" value="<?=$data[$i][4]?>">
+			  <input name="tahun" type="text" class="span12" value="<?=$data[$i][4]?>" required>
 			</label>
 			<label><p class="title">Edisi</p>
-			  <input name="edisi" type="text" class="span12" value="<?=$data[$i][5]?>">
+			  <input name="edisi" type="text" class="span12" value="<?=$data[$i][5]?>" required>
 			</label>
 			<label><p class="title">ISSN ISBN</p>
-			  <input name="issn_isbn" type="text" class="span12" value="<?=$data[$i][6]?>">
+			  <input name="issn_isbn" type="text" class="span12" value="<?=$data[$i][6]?>" required>
 			</label>
 			<label><p class="title">Seri</p>
-			  <input name="seri" type="text" class="span12" value="<?=$data[$i][7]?>">
+			  <input name="seri" type="text" class="span12" value="<?=$data[$i][7]?>" required>
 			</label>
 			<label><p class="title">Abstraksi</p>
 			  <textarea name="abstraksi" class="span12" rows="4"><?=$data[$i][8]?></textarea>
 			</label>
 			<label><p class="title">Kategori</p>
-				<select name="kodeKategori" class="span12">
+				<select name="kodeKategori" class="span12" required>
 				  <?php
 					$db=new MySQL();
 					$db->connect();
@@ -292,6 +292,11 @@
 					} ?>
 				</select>
 			</label>
+			<div class="form-group">
+				<label for="">Gambar</label>
+				<input type="file" name="image" id="" class="btn btn-success" required>
+			</div>
+
 		</div>
 	  </div>
   </div>
@@ -312,14 +317,14 @@
   </div>
   <div class="modal-body">
       <div class="row-fluid">
-		<input type="hidden" name="kodePetugas" id="kodePetugas" value="<?=$idUser?>">
-		<input type="hidden" name="tb" id="tb">
+		<input type="hidden" name="kodePetugas" id="kodePetugas" value="<?=$idUser?>" required>
+		<input type="hidden" name="tb" id="tb" required>
 		<div>
 			<label><p class="title">Judul Buku</p>
-			  <input name="judul" type="text" class="span12" value="">
+			  <input name="judul" type="text" class="span12" value="" required>
 			</label>
 			<label><p class="title">Penerbit</p>
-				<select name="kodePenerbit" class="span12">
+				<select name="kodePenerbit" class="span12" required>
 				  <?php
 					$db=new MySQL();
 					$db->connect();
@@ -332,7 +337,7 @@
 				</select>
 			</label>
 			<label><p class="title">Pengarang</p>
-				<select name="kodePengarang" class="span12">
+				<select name="kodePengarang" class="span12" required>
 				  <?php
 					$db=new MySQL();
 					$db->connect();
@@ -345,22 +350,22 @@
 				</select>
 			</label>
 			<label><p class="title">Tahun Terbit</p>
-			  <input name="tahun" type="text" class="span12" value="">
+			  <input name="tahun" type="text" class="span12" value="" required>
 			</label>
 			<label><p class="title">Edisi</p>
-			  <input name="edisi" type="text" class="span12" value="">
+			  <input name="edisi" type="text" class="span12" value="" required>
 			</label>
 			<label><p class="title">ISSN ISBN</p>
-			  <input name="issn_isbn" type="text" class="span12" value="">
+			  <input name="issn_isbn" type="text" class="span12" value="" required>
 			</label>
 			<label><p class="title">Seri</p>
-			  <input name="seri" type="text" class="span12" value="">
+			  <input name="seri" type="text" class="span12" value="" required>
 			</label>
 			<label><p class="title">Abstraksi</p>
-			  <textarea name="abstraksi" class="span12" rows="4"></textarea>
+			  <textarea name="abstraksi" class="span12" rows="4 required></textarea>
 			</label>
 			<label><p class="title">Kategori</p>
-				<select name="kodeKategori" class="span12">
+				<select name="kodeKategori" class="span12" required>
 				  <?php
 					$db=new MySQL();
 					$db->connect();
@@ -372,6 +377,10 @@
 				  <?php } ?>
 				</select>
 			</label>
+			<div class="form-group">
+				<label for="">Gambar</label>
+				<input type="file" name="image" id="" class="btn btn-success" required>
+			</div>
 		</div>
 	  </div>
   </div>
