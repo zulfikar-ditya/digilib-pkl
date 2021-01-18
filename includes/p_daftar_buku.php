@@ -362,7 +362,7 @@
 			  <input name="seri" type="text" class="span12" value="" required>
 			</label>
 			<label><p class="title">Abstraksi</p>
-			  <textarea name="abstraksi" class="span12" rows="4 required></textarea>
+			  <textarea name="abstraksi" class="span12" rows="4" required></textarea>
 			</label>
 			<label><p class="title">Kategori</p>
 				<select name="kodeKategori" class="span12" required>

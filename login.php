@@ -27,55 +27,58 @@
     <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <style>
-        body {
-            background: url(img/cream_dust.png);
-        }
-    </style>
     <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="js/redactor/css/redactor.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="css/jquery.autocomplete.css" />
     
+    <style>
+      
+        body {
+            background: linear-gradient(45deg, #ff005e, #fbff00);
+            height: 100vh;
+        }
+        .container-fluid .login {
+          background: rgba(255, 255, 255, .1);
+        }
+    </style>
     <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
 </head>
 
 <body>
   <!--MAIN CONTENT-->
   <div class="container-fluid">
-  
   <?php if(empty($_GET['p'])) { ?>
-   	<br />
-   	<br />
     <div id="login">
-    	<div id="logo">
-   	    	<img src="img/logoTA.png" width="70px" class="img-float"> 
+    <div class="row" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; height: 100vh;">
+      <div class="col-md-5" style="background: rgba(255, 255, 255, 0.1); padding: 20px;">
+        <h2 style="color: white; text-align: center;">Login</h2>
+       <form action="checklogin.php" method="post" style="margin-top: 20px;">
+        <label>
+            <input class="span4" type="text" placeholder="Username" name="username">
+        </label>
+        <label>
+            <input class="span4" type="password" placeholder="Password" name="password">
+        </label>
+        <label>
+            <select name="type" class="span4">
+              <option value="1">Petugas</option>
+              <option value="2">Dosen</option>
+              <option value="3">Mahasiswa</option>
+            </select>
+        </label>
+        <div class="" style="display: flex; justify-content: center;">
+          <button type="submit" class="btn" style="background: #00bcd4; color: white; border: none;">
+              Login
+          </button>
         </div>
-   	  <h3 class="title">Login User Thesis Assistant</h3>
-    	<form action="checklogin.php" method="post">
-            <label>
-                <input class="span4" type="text" placeholder="Username" name="username">
-            </label>
-            <label>
-                <input class="span4" type="password" placeholder="Password" name="password">
-            </label>
-            <label>
-                <select name="type" class="span4">
-                  <option value="1">Koordinator</option>
-                  <option value="2">Dosen</option>
-                  <option value="3">Mahasiswa</option>
-                </select>
-            </label>
-          <hr />
-            <button type="submit" class="btn btn-primary">
-                <i class="icon-ok icon-white"></i>
-                Login
-            </button>
-            <a href="<?=base_url()?>" class="btn btn-success">
-                <i class="icon-remove icon-white"></i>
-                Close
-            </a>
-    	</form>
+        <a href="<?=base_url()?>" class="btn btn-success">
+            <i class="icon-remove icon-white"></i>
+            Close
+        </a>
+       </form>
+      </div>
+    </div>
 	</div>
   <?php }
   

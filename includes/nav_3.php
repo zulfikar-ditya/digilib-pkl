@@ -21,7 +21,7 @@
 						  <input type="text" class="search-query" placeholder="Search">
 						</form>
 					</li>
-					<li class="logout"><a href="logout.php"><i class="icon-remove icon-white"></i> Keluar</a></li>
+					<li class="logout"><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Keluar</a></li>
 				</ul>
 			  </div><!--/.nav-collapse -->
 			</div>

@@ -48,16 +48,35 @@
         <link rel="stylesheet" href="css/bar/bar.css" type="text/css" media="screen" />
         <link rel="stylesheet" type="text/css" href="js/jquery.autocomplete.css" />
         <link type="text/css" href="css/smoothness/jquery-ui-1.8.22.custom.css" rel="stylesheet" />
+		<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+		<style>
+			:root {
+				--green: #89ff00;
+				--success: #89ff00;
+
+			}
+			body {
+				background: white;
+				font-size: 14px;
+				font-family: 'Source Sans Pro', sans-serif;
+			}
+			
+		</style>
+		<!-- font awesome -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
     </head>
     <body>
     
     <body>
 		<!--HEADER-->
 		<div>
-			<div id="header">
+			<div id="header" style="height: auto; padding: 10px;">
 				<div class="container-fluid">
-					<div id="logo">
-						<img src="img/logo.png">
+					<div id="logo" style="display: flex; flex-wrap: wrap; justify-content: center; height: 30px;">
+						<img src="img/logo.png" style="width: 100px;">
 					</div>
 				</div>
 			</div>
@@ -70,7 +89,7 @@
 				include("includes/nav_". $type .".php"); 
 		?>
 		
-	<div class="container-fluid">
+	<div class="container-fluid" style="box-shadow: 0 10px 10px rgba(0, 0, 0, .15); padding: 20px;">
 			<?php 
 				if(!isset($type))
 					include("includes/home_0.php"); 
