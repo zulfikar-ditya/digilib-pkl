@@ -1,3 +1,3 @@
 <div class="row-fluid">
-	<form method="post"
+	<form method="post">
 </div>

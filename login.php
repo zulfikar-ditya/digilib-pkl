@@ -21,7 +21,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="icon" type="image/png" href="img/logo.png">
     <title>
-        Thesis Assistant | PENS
+        LOGIN - DIGILIB
     </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
@@ -35,14 +35,17 @@
     <style>
       
         body {
-            background: linear-gradient(45deg, #ff005e, #fbff00);
+            /* background: linear-gradient(45deg, #ff005e, #fbff00); */
+            background: white;
             height: 100vh;
         }
         .container-fluid .login {
-          background: rgba(255, 255, 255, .1);
+          background: rgba(255, 255, 255, .2);
         }
     </style>
     <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+
 </head>
 
 <body>
@@ -51,25 +54,35 @@
   <?php if(empty($_GET['p'])) { ?>
     <div id="login">
     <div class="row" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; height: 100vh;">
-      <div class="col-md-5" style="background: rgba(255, 255, 255, 0.1); padding: 20px;">
-        <h2 style="color: white; text-align: center;">Login</h2>
+      <div class="col-md-5" style="background: white; padding: 20px; box-shadow: 0 5px 10px #0dcaf0; border: 1px #0dcaf0;">
+        <h2 style="color: black; text-align: center; font-weight: 50; letter-spacing: 5px;">Login</h2>
        <form action="checklogin.php" method="post" style="margin-top: 20px;">
+       <div class="form-group">
         <label>
-            <input class="span4" type="text" placeholder="Username" name="username">
+            <span>Username <span style="color: #dc3545;">*</span></span>
         </label>
+            <input class="span4" type="text" name="username" class="form-control" required autofocus>
+       </div>
+       <div class="form-group">
         <label>
-            <input class="span4" type="password" placeholder="Password" name="password">
+          <span>Password <span style="color: #dc3545;">*</span></span>        
         </label>
+          <input class="span4" type="password"name="password" class="form-control" required>
+       </div>
+       <div class="form-group">
         <label>
-            <select name="type" class="span4">
-              <option value="1">Petugas</option>
-              <option value="2">Dosen</option>
-              <option value="3">Mahasiswa</option>
-            </select>
+          <span>Login As <span style="color: #dc3545;">*</span></span>        
         </label>
+        <select name="type" class="span4 form-control" required>
+          <option value="" selected>-----------</option>
+          <option value="1">Petugas</option>
+          <option value="2">Dosen</option>
+          <option value="3">Mahasiswa</option>
+        </select>
+       </div>
         <div class="" style="display: flex; justify-content: center;">
-          <button type="submit" class="btn" style="background: #00bcd4; color: white; border: none;">
-              Login
+          <button type="submit" class="btn" style="background: #0dcaf0; color: white; border: none; letter-spacing: 2px;">
+              Login <i class="fas fa-sign-in-alt"></i>
           </button>
         </div>
         <a href="<?=base_url()?>" class="btn btn-success">

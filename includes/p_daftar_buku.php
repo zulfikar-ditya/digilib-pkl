@@ -10,7 +10,7 @@
 	$db=new MySQL();
 	$db->connect();
 	$db->execute("SELECT b.kodeBuku, b.judul, p1.nama, p2.nama, b.tahun, b.edisi, b.issn_isbn, 
-		b.seri, b.abstraksi, k.namaKategori, b.tglInput, b.tglUpdate, b.image,pt.nama, p1.kodePenerbit, p2.kodePengarang
+		b.seri, b.abstraksi, k.namaKategori, b.tglInput, b.tglUpdate, b.image, pt.nama, p1.kodePenerbit, p2.kodePengarang
 		FROM tb_buku b, tb_penerbit p1, tb_pengarang p2, tb_kategori k, tb_petugas pt
 		WHERE b.kodePenerbit = p1.kodePenerbit
 		AND b.kodePengarang = p2.kodePengarang
@@ -309,7 +309,7 @@
 <?php } ?>
 
 <!-- TAMBAH -->
-<form action="?page=process" method="post">
+<form action="?page=process" method="post" enctype="multipart/form-data">
 <div class="modal hide fade" id="modalTambah" tabindex="-1" role="dialog" aria-labelledby="modalTambahLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>

@@ -10,7 +10,7 @@
 			$tmp = $_FILES['image']['tmp_name'];
 			$db->execute("UPDATE tb_buku SET 
 				judul = '$judul', kodePenerbit = '$kodePenerbit', kodePengarang = '$kodePengarang', tahun = '$tahun', edisi = '$edisi',
-				issn_isbn = '$issn_isbn', seri = '$seri', abstraksi = '$abstraksi', kodeKategori = '$kodeKategori', tglUpdate = '$date',
+				issn_isbn = '$issn_isbn', seri = '$seri', abstraksi = '$abstraksi', kodeKategori = '$kodeKategori', tglUpdate = '$date', image = '$file',
 				lastUpdateBy = '$idUser'
 				WHERE kodeBuku = $kodeBuku");	
 			move_uploaded_file($tmp, $file);
@@ -70,8 +70,12 @@
 		$db=new MySQL();
 		$db->connect();
 		if(isset($tb)) {
+			$file = 'img/'.$_FILES['image']['name'];
+			$tmp = $_FILES['image']['tmp_name'];
 			$db->execute("INSERT INTO tb_buku VALUES
-				('','$judul','$kodePenerbit','$kodePengarang','$tahun','$edisi','$issn_isbn','$seri','$abstraksi','$kodeKategori','$date','$date','','$kodePetugas')");
+				('','$judul','$kodePenerbit','$kodePengarang','$tahun','$edisi','$issn_isbn','$seri','$abstraksi','$kodeKategori','$date','$date','$file','$kodePetugas')
+				");
+			move_uploaded_file($tmp, $file);
 			redirect("?page=daftar_buku","");
 		} else if(isset($tk)) {
 			$db->execute("INSERT INTO tb_kategori VALUES ('','$namaKategori')");

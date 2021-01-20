@@ -1,6 +1,6 @@
 	  <!--NAV 1-->
 	  <div id="nav">
-		<div class="navbar container-fluid">
+		<div class="navbar">
 		  <div class="navbar-inner">
 			<div>
 			  <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -21,7 +21,7 @@
 						  <input type="text" class="search-query" placeholder="Search">
 						</form>
 					</li>
-					<li class="logout"><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Keluar</a></li>
+					<li class="logout"><a href="logout.php">LOGOUT <i class="fas fa-sign-out-alt"></i></a></li>
 				</ul>
 			  </div><!--/.nav-collapse -->
 			</div>

@@ -20,7 +20,7 @@
 	  </div><!--/.well -->
 	</div><!--/span-->
 	
-	<div class="span9 well" id="main-content">
+	<div class="span9 well" id="main-content" style="box-shadow: 0 5px rgba(0, 0, 0, .2) ;">
 	  <div class="row-fluid">
 		<div class="span12">
 		  <?php 

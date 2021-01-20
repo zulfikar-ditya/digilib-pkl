@@ -1,6 +1,6 @@
 	  <!--NAV 1-->
 	  <div id="nav">
-		<div class="navbar container-fluid">
+		<div class="navbar container">
 		  <div class="navbar-inner">
 			<div>
 			  <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">

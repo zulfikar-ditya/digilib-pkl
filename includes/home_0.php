@@ -9,7 +9,7 @@
 			<div class="" style="text-align: center;">
 				<h2>Selamat Datang</h2>
 				<p>Batas peminjaman buku adalah maks 1 x 2 buku / hari</p>
-				<p><a href="login.php" class="btn" style="background: #89ff00; color: black; text-decoration: none;">Login</a></p>
+				<p><a href="login.php" class="btn btn-success" style="text-decoration: none;">Login <i class="fas fa-sign-in-alt"></i></a></p>
 			</div>
 		  <?php
 			} else
