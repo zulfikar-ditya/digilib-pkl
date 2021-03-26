@@ -113,7 +113,7 @@
 									<div class="controls">
 										<div class="input-prepend">
 											<span class="add-on"><i class="icon-envelope"></i></span>
-											<input class="span3" type="text" placeholder="Email" name="email">
+											<input class="span3" type="email" placeholder="Email" name="email">
 										</div>
 									</div>
 								</div>

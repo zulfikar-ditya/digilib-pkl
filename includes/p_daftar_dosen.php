@@ -180,7 +180,7 @@
 			  <input name="password" type="password" class="span12" value="" required>
 			</label>
 			<label><p class="title">Email</p>
-			  <input name="email" type="text" class="span12" value="<?=$data[$i][4]?>" required>
+			  <input name="email" type="email" class="span12" value="<?=$data[$i][4]?>" required>
 			</label>
 			<label><p class="title">Tempat Lahir</p>
 			  <input name="tpl" type="text" class="span12" value="<?=$data[$i][7]?>" required>
@@ -224,7 +224,7 @@
 			  <input name="password" type="password" class="span12" value="" required>
 			</label>
 			<label><p class="title">Email</p>
-			  <input name="email" type="text" class="span12" value="" required>
+			  <input name="email" type="email" class="span12" value="" required>
 			</label>
 			<label><p class="title">Tempat Lahir</p>
 			  <input name="tpl" type="text" class="span12" value="" required>

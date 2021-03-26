@@ -80,7 +80,7 @@
 		<input type="hidden" name="kodePeminjam" id="kodePeminjam" value="<?=$idUser?>">
 		<input type="hidden" name="type" id="type" value="<?=$type?>">
 		<div class="span4">
-			<p><img src="<?= $data[$i][12]?>" class="img-polaroid img"></p>
+			<p><img src="<?= $data[$i][10]?>" class="img-polaroid img"></p>
 		</div>
 		<div class="span7 title">
 			<table class="table table-condensed">

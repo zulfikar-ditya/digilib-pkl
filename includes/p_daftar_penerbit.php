@@ -156,7 +156,7 @@
 			  <input name="telp" type="text" class="span12" value="<?=$data[$i][3]?>" autofocus>
 			</label>
 			<label><p class="title">Email</p>
-			  <input name="email" type="text" class="span12" value="<?=$data[$i][4]?>" autofocus>
+			  <input name="email" type="email" class="span12" value="<?=$data[$i][4]?>" autofocus>
 			</label>
 		</div>
 	  </div>
@@ -190,7 +190,7 @@
 			  <input name="telp" type="text" class="span12" value="" autofocus>
 			</label>
 			<label><p class="title">Email</p>
-			  <input name="email" type="text" class="span12" value="" autofocus>
+			  <input name="email" type="email" class="span12" value="" autofocus>
 			</label>
 		</div>
 	  </div>
